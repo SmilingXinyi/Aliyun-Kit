@@ -29,13 +29,13 @@ exports.getQuery = function (emailContent, method, accessKeyID, accessKeySecret)
         throw err
     }
 
-    const sortData = Object.keys(data).sort().reduce((pre, cur) => {
+    const sortData = Object.keys(data).sort().reduce(function (pre, cur) {
         return pre.concat([`${encodeURIComponent(cur)}=${encodeURIComponent(data[cur])}`])
     }, []);
 
     const sortDataStr = sortData.join('&');
 
-    let StringToSign = method + '&' + encodeURIComponent('/') + '&' + encodeURIComponent(sortDataStr);
+    const StringToSign = method + '&' + encodeURIComponent('/') + '&' + encodeURIComponent(sortDataStr);
 
     const Secret = (accessKeySecret || process.env.aliyun.accessKeySecret) + '&';
 
@@ -43,7 +43,7 @@ exports.getQuery = function (emailContent, method, accessKeyID, accessKeySecret)
 
     data.Signature = Signature;
 
-    return Object.keys(data).sort().reduce((pre, cur) => {
+    return Object.keys(data).sort().reduce(function (pre, cur) {
         return pre.concat([`${cur}=${data[cur]}`])
     }, []).join('&');
 };
