@@ -1,5 +1,5 @@
 # Aliyun-Kit
-ali cloud kit (╯‵□′)╯︵┻━┻
+Ali cloud kit (╯‵□′)╯︵┻━┻
 
 ## 阿里云 - 邮件推送
 
@@ -7,9 +7,9 @@ ali cloud kit (╯‵□′)╯︵┻━┻
 
 建议设置环境变量值，程序中可不传递
 
-process.env.aliyun.accessKeyID
+aliyun.accessKeyID
 
-process.env.aliyun.accessKeySecret
+aliyun.accessKeySecret
 
 #### Doc
 
